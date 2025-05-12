@@ -40,5 +40,5 @@ if __name__ == '__main__':
 
     model_int32 = helper.make_model(graph_int32, producer_name="onnx-typecast")
     model_int32.opset_import[0].version = opset_version
-    onnx.check_model(model_int32)
+    onnx.checker.check_model(model_int32)
     onnx.save_model(model_int32, "delete_add.onnx")
