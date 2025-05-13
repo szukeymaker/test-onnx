@@ -19,7 +19,7 @@ def add_cast_node(nodes):
                 name='add')
             new_add_node = onnx.helper.make_node(
                 'Cast',
-                inputs=['add'],
+                inputs=['add_output'],
                 outputs=['output'],
                 name='cast',
                 to=TensorProto.INT64
