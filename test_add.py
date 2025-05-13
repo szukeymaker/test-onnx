@@ -40,7 +40,7 @@ if __name__ == '__main__':
     graph_name = f"{graph.name}-int32"
     # new_nodes = delete_add_node(nodes)
     new_nodes = add_cast_node(nodes)
-    graph.output[0].type.tensor_type.elem_type = 7
+    graph.output[0].type.tensor_type.elem_type = TensorProto.INT64
     graph_int32 = helper.make_graph(
         new_nodes,
         graph_name,
