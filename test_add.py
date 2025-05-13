@@ -12,19 +12,21 @@ def add_cast_node(nodes):
     new_nodes = []
     for node in nodes:
         if node.name == "add":
+            '''
             new_scale_node = onnx.helper.make_node(
                 "Add",
                 inputs=['conv_output', 'add_input'],
                 outputs=['add_output'],
                 name='add')
+            '''
             new_add_node = onnx.helper.make_node(
                 'Cast',
-                inputs=['add_output'],
+                inputs=['add'],
                 outputs=['output'],
                 name='cast',
                 to=TensorProto.INT64
             )
-            new_nodes += [new_scale_node, new_add_node]
+            new_nodes += [new_add_node]
         else:
             new_nodes += [node]
 
