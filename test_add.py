@@ -44,7 +44,7 @@ if __name__ == '__main__':
     graph_int32 = helper.make_graph(
         new_nodes,
         graph_name,
-        graph.input[:-1],
+        graph.input,
         graph.output,
         initializer=graph.initializer,
     )
